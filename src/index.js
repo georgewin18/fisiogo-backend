@@ -3,6 +3,8 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const PasienRoutes = require('./routes/pasien.route')
+const FisioterapisRoutes = require('./routes/fisioterapis.route')
+const JadwalTerapiRoutes = require('./routes/jadwal_terapi.route')
 
 const app = express()
 const port = process.env.PORT
@@ -15,6 +17,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/pasien', PasienRoutes)
+app.use('/api/fisioterapis', FisioterapisRoutes)
+app.use('/api/jadwalTerapi', JadwalTerapiRoutes)
 
 mongoose.connect(process.env.CONN_STRING)
 .then(() => {
