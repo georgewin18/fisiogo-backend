@@ -1,4 +1,3 @@
-const { parseVersionInfo } = require('next/dist/server/dev/parse-version-info')
 const Pasien = require('../models/pasien.model')
 
 const getPasien = async (req, res) => {
