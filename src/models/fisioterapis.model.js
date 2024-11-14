@@ -20,7 +20,23 @@ const FisioterapisSchema = mongoose.Schema(
     speciality: {
       type: String,
       required: true
-    }
+    },
+
+    therapy: [
+      {
+        title: {
+          type: String,
+          required: false,
+          default: null
+        },
+
+        pasien: {
+          type: String,
+          required: false,
+          default: null
+        }
+      }
+    ]
   }
 )
 
