@@ -12,10 +12,24 @@ const JadwalTerapiSchema = mongoose.Schema(
       required: true
     },
 
-    date: {
-      type: Date,
+    sessions: {
+      type: Number,
       required: true
     },
+
+    schedule: [
+      {
+        date: {
+          type: Date,
+          required: true
+        },
+
+        status: {
+          type: String,
+          required: true
+        }
+      }
+    ],
 
     title: {
       type: String,
@@ -23,11 +37,6 @@ const JadwalTerapiSchema = mongoose.Schema(
     },
 
     detail: {
-      type: String,
-      required: true
-    },
-
-    status: {
       type: String,
       required: true
     }
