@@ -7,29 +7,58 @@ const PasienSchema = mongoose.Schema(
       required: true
     },
 
-    fisioterapis: {
+    email: {
       type: String,
-      required: false,
-      default: null
+      required: true
     },
 
-    progress: {
-      sesi_total: {
-        type: Number,
-        required: false,
-        default: 0
-      },
-      sesi_selesai: {
-        type: Number,
-        required: false,
-        default: 0
-      },
-      skor_progress: {
-        type: Number,
-        required: false,
-        default: 0
+    phone: {
+      type: String,
+      required: true
+    },
+
+    address: {
+      type: String,
+      required: true
+    },
+
+    birthdate: {
+      type: Date,
+      required: true
+    },
+
+    gender: {
+      type: String,
+      required: true
+    },
+
+    progress: [
+      {
+        title: {
+          type: String,
+          required: false,
+          default: null
+        },
+
+        sesi_total: {
+          type: Number,
+          required: false,
+          default: 0
+        },
+
+        sesi_selesai: {
+          type: Number,
+          required: false,
+          default: 0
+        },
+
+        skor_progress: {
+          type: Number,
+          required: false,
+          default: 0
+        }
       }
-    }
+    ]
   }
 )
 
