@@ -2,6 +2,8 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
+
 const PasienRoutes = require('./routes/pasien.route')
 const FisioterapisRoutes = require('./routes/fisioterapis.route')
 const JadwalTerapiRoutes = require('./routes/jadwal_terapi.route')
@@ -9,6 +11,7 @@ const JadwalTerapiRoutes = require('./routes/jadwal_terapi.route')
 const app = express()
 const port = process.env.PORT
 
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
