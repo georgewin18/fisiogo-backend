@@ -4,9 +4,9 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
-const PasienRoutes = require('./routes/pasien.route')
-const FisioterapisRoutes = require('./routes/fisioterapis.route')
-const JadwalTerapiRoutes = require('./routes/jadwal_terapi.route')
+const PasienRoutes = require('./src/routes/pasien.route')
+const FisioterapisRoutes = require('./src/routes/fisioterapis.route')
+const JadwalTerapiRoutes = require('./src/routes/jadwal_terapi.route')
 
 const app = express()
 const port = process.env.PORT
