@@ -23,15 +23,18 @@ app.use('/api/pasien', PasienRoutes)
 app.use('/api/fisioterapis', FisioterapisRoutes)
 app.use('/api/jadwalTerapi', JadwalTerapiRoutes)
 
-mongoose.connect(process.env.CONN_STRING)
-.then(() => {
-  console.log('connected to database')
-  app.listen(port, () => {
-    console.log(`server running on port ${port}`)
-  })
-})
-.catch((error) => {
-  console.log(error)
-})
+async function startServer() {
+  try {
+    await mongoose.connect(process.env.CONN_STRING)
+    console.log('Connected to database')
+
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`)
+    })
+  } catch (error) {
+    console.error('Failed to connect to database:', error)
+  }
+}
+startServer()
 
 export default app
