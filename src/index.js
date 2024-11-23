@@ -16,6 +16,7 @@ app.use(express.urlencoded({extended: false}))
 
 app.get('/', (req, res) => {
   res.send('Welcome to FisioGo-API')
+  console.log('it works')
 })
 
 app.use('/api/pasien', PasienRoutes)
@@ -24,7 +25,7 @@ app.use('/api/jadwalTerapi', JadwalTerapiRoutes)
 
 async function getConnection() {
   try {
-    await mongoose.connect(process.env.CONN_STRING)
+    await mongoose.connect(process.env.MONGODB_URI)
     console.log('Connected to database')
   } catch (error) {
     console.error('Failed to connect to database:', error)
