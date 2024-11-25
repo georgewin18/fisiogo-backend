@@ -7,6 +7,7 @@ const cors = require('cors')
 const PasienRoutes = require('./routes/pasien.route')
 const FisioterapisRoutes = require('./routes/fisioterapis.route')
 const JadwalTerapiRoutes = require('./routes/jadwal_terapi.route')
+const ChatRoutes = require('./routes/chat.route')
 
 const app = express()
 
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 app.use('/api/pasien', PasienRoutes)
 app.use('/api/fisioterapis', FisioterapisRoutes)
 app.use('/api/jadwalTerapi', JadwalTerapiRoutes)
+app.use('api/chat', ChatRoutes)
 
 async function getConnection() {
   try {
