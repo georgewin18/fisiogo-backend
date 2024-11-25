@@ -8,6 +8,7 @@ const PasienRoutes = require('./routes/pasien.route')
 const FisioterapisRoutes = require('./routes/fisioterapis.route')
 const JadwalTerapiRoutes = require('./routes/jadwal_terapi.route')
 const ChatRoutes = require('./routes/chat.route')
+const PembayaranRoutes = require('./routes/pembayaran.route')
 
 const app = express()
 
@@ -24,6 +25,7 @@ app.use('/api/pasien', PasienRoutes)
 app.use('/api/fisioterapis', FisioterapisRoutes)
 app.use('/api/jadwalTerapi', JadwalTerapiRoutes)
 app.use('/api/chat', ChatRoutes)
+app.use('/api/pembayaran', PembayaranRoutes)
 
 async function getConnection() {
   try {
