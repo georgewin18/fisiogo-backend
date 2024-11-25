@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 app.use('/api/pasien', PasienRoutes)
 app.use('/api/fisioterapis', FisioterapisRoutes)
 app.use('/api/jadwalTerapi', JadwalTerapiRoutes)
-app.use('api/chat', ChatRoutes)
+app.use('/api/chat', ChatRoutes)
 
 async function getConnection() {
   try {
