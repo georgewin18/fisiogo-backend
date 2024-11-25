@@ -20,7 +20,7 @@ const getChat = async (req, res) => {
 }
 
 const createChat = async (req, res) => {
-  const { body } = res
+  const { body } = req
 
   try {
     const chat = await Chat.create(body)
