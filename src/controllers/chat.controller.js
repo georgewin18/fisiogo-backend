@@ -14,7 +14,8 @@ const getChat = async (req, res) => {
     }
   } else {
     res.status(400).json({
-      message: 'wrong body format'
+      message: 'wrong body format',
+      body: body
     })
   }
 }
@@ -33,7 +34,7 @@ const createChat = async (req, res) => {
 }
 
 const updateChat = async (req, res) => {
-  const { body } = res
+  const { body } = req
 
   if (!body.pasien || !body.fisioterapis || !body.sender || !body.text) {
     res.status(400).json({
