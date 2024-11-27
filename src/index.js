@@ -38,6 +38,4 @@ async function getConnection() {
 }
 getConnection()
 
-app.listen(port, () => {
-  console.log(`server running in port ${port}`)
-})
+export default app
