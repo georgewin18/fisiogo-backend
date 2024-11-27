@@ -11,6 +11,7 @@ const ChatRoutes = require('./routes/chat.route')
 const PembayaranRoutes = require('./routes/pembayaran.route')
 
 const app = express()
+const port = process.env.PORT
 
 app.use(cors())
 app.use(express.json())
@@ -37,4 +38,6 @@ async function getConnection() {
 }
 getConnection()
 
-export default app
+app.listen(port, () => {
+  console.log(`server running in port ${port}`)
+})
