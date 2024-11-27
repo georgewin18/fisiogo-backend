@@ -11,6 +11,24 @@ const getPasien = async (req, res) => {
   }
 }
 
+const getPasienByEmail = async (req, res) => {
+  const { body } = req
+
+  try {
+    const pasien = await Pasien.find(body)
+    if (!pasien) {
+      return res.status(404).json({
+        message: "Pasien Not Found"
+      })
+    }
+    res.status(200).json(pasien)
+  } catch (error) {
+    res.status(500).json({
+      message: error.message
+    })
+  }
+}
+
 const getPasienById = async (req, res) => {
   const { id } = req.params
   
@@ -83,6 +101,7 @@ const deletePasien = async (req, res) => {
 
 module.exports = {
   getPasien,
+  getPasienByEmail,
   getPasienById,
   createPasien,
   updatePasien,
