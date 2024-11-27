@@ -4,6 +4,7 @@ const router = express.Router()
 
 router.get('/', FisioterapisController.getFisioterapis)
 router.get('/:id', FisioterapisController.getFisioterapisById)
+router.post('/email', FisioterapisController.getFisioterapisByEmail)
 router.post('/', FisioterapisController.createFisioterapis)
 router.patch('/:id', FisioterapisController.updateFisioterapis)
 router.delete('/:id', FisioterapisController.deleteFisioterapis)
